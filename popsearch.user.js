@@ -215,6 +215,18 @@ popData.engines = [{
     return onCopy();
   }
 }, {
+  id: "element_text_st",
+  title: "Copy element text",
+  description: "Copy the text of the clicked element",
+  defaultState: 1,
+  src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAA0SURBVDhPY/z//z8DKYAJShMNSNYAdRIjIyOEjwdAVNLNScgA7jysAUh7J41IDbROrQwMAOdoEhG0gLSFAAAAAElFTkSuQmCC",
+  action: function () {
+    const elementText = popData.mousedownEvent.target.textContent.trim();
+    GM_setClipboard(elementText);
+    
+    return hideBar();
+  }
+},{
   id: "Setting_st",
   title: "Open Setting",
   description: "Popup search 选项 / Open Setting",
